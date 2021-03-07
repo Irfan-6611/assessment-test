@@ -1,5 +1,5 @@
 //
-//  HomeWorker.swift
+//  HomePageWorker.swift
 //  AssessmentTest
 //
 //  Created by Irfan Ahmed on 07/03/2021.
@@ -13,7 +13,7 @@
 import UIKit
 import UIKit
 
-class HomeWorker
+class HomePageWorker
 {
     
     func readLocalFile<T: Codable>(forName name: String, completion: @escaping (T?) ->() ) {

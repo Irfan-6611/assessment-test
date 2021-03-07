@@ -1,5 +1,5 @@
 //
-//  HomePresenter.swift
+//  HomePagePresenter.swift
 //  AssessmentTest
 //
 //  Created by Irfan Ahmed on 07/03/2021.
@@ -12,20 +12,20 @@
 
 import UIKit
 
-protocol HomePresentationLogic
+protocol HomePagePresentationLogic
 {
-  func presentGoldenScent(response: Home.FetchGoldenScent.Response)
+  func presentGoldenScent(response: HomePage.FetchGoldenScent.Response)
 }
 
-class HomePresenter: HomePresentationLogic
+class HomePagePresenter: HomePagePresentationLogic
 {
-  weak var viewController: HomeDisplayLogic?
+  weak var viewController: HomePageDisplayLogic?
   
   // MARK: Do something
   
-  func presentGoldenScent(response: Home.FetchGoldenScent.Response)
+  func presentGoldenScent(response: HomePage.FetchGoldenScent.Response)
   {
-    let viewModel = Home.FetchGoldenScent.ViewModel(displayedRows: response.rows ?? [])
+    let viewModel = HomePage.FetchGoldenScent.ViewModel(displayedRows: response.rows ?? [])
     viewController?.displayGoldenScent(viewModel: viewModel)
   }
 

@@ -1,5 +1,5 @@
 //
-//  HomeRouter.swift
+//  HomePageRouter.swift
 //  AssessmentTest
 //
 //  Created by Irfan Ahmed on 07/03/2021.
@@ -12,20 +12,20 @@
 
 import UIKit
 
-@objc protocol HomeRoutingLogic
+@objc protocol HomePageRoutingLogic
 {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol HomeDataPassing
+protocol HomePageDataPassing
 {
-  var dataStore: HomeDataStore? { get }
+  var dataStore: HomePageDataStore? { get }
 }
 
-class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
+class HomePageRouter: NSObject, HomePageRoutingLogic, HomePageDataPassing
 {
-  weak var viewController: HomeViewController?
-  var dataStore: HomeDataStore?
+  weak var viewController: HomePageViewController?
+  var dataStore: HomePageDataStore?
   
   // MARK: Routing
   
@@ -46,14 +46,14 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: HomeViewController, destination: SomewhereViewController)
+  //func navigateToSomewhere(source: HomePageViewController, destination: SomewhereViewController)
   //{
   //  source.show(destination, sender: nil)
   //}
   
   // MARK: Passing data
   
-  //func passDataToSomewhere(source: HomeDataStore, destination: inout SomewhereDataStore)
+  //func passDataToSomewhere(source: HomePageDataStore, destination: inout SomewhereDataStore)
   //{
   //  destination.name = source.name
   //}

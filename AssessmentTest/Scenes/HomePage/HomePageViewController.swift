@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  HomePageViewController.swift
 //  AssessmentTest
 //
 //  Created by Irfan Ahmed on 07/03/2021.
@@ -12,15 +12,15 @@
 
 import UIKit
 
-protocol HomeDisplayLogic: class
+protocol HomePageDisplayLogic: class
 {
-  func displayGoldenScent(viewModel: Home.FetchGoldenScent.ViewModel)
+  func displayGoldenScent(viewModel: HomePage.FetchGoldenScent.ViewModel)
 }
 
-class HomeViewController: UIViewController, HomeDisplayLogic
+class HomePageViewController: UIViewController, HomePageDisplayLogic
 {
-  var interactor: HomeBusinessLogic?
-  var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+  var interactor: HomePageBusinessLogic?
+  var router: (NSObjectProtocol & HomePageRoutingLogic & HomePageDataPassing)?
 
   // MARK: Object lifecycle
   
@@ -60,11 +60,11 @@ class HomeViewController: UIViewController, HomeDisplayLogic
     
   func fetchGoldenScenet()
   {
-    let request = Home.FetchGoldenScent.Request()
+    let request = HomePage.FetchGoldenScent.Request()
     interactor?.fetchGoldenScent(request: request)
   }
   
-  func displayGoldenScent(viewModel: Home.FetchGoldenScent.ViewModel)
+  func displayGoldenScent(viewModel: HomePage.FetchGoldenScent.ViewModel)
   {
     print(viewModel.displayedRows.count)
   }
@@ -72,16 +72,16 @@ class HomeViewController: UIViewController, HomeDisplayLogic
 
 //MARK:- Private Extensions
 
-private extension HomeViewController{
+private extension HomePageViewController{
     
     // MARK: Setup
     
     private func setup()
     {
       let viewController = self
-      let interactor = HomeInteractor()
-      let presenter = HomePresenter()
-      let router = HomeRouter()
+      let interactor = HomePageInteractor()
+      let presenter = HomePagePresenter()
+      let router = HomePageRouter()
       viewController.interactor = interactor
       viewController.router = router
       interactor.presenter = presenter

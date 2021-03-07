@@ -1,5 +1,5 @@
 //
-//  HomeModels.swift
+//  HomePageModels.swift
 //  AssessmentTest
 //
 //  Created by Irfan Ahmed on 07/03/2021.
@@ -12,7 +12,7 @@
 
 import UIKit
 
-enum Home
+enum HomePage
 {
   // MARK: Use cases
   

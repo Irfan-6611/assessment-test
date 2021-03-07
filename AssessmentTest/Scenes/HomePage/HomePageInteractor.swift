@@ -1,5 +1,5 @@
 //
-//  HomeInteractor.swift
+//  HomePageInteractor.swift
 //  AssessmentTest
 //
 //  Created by Irfan Ahmed on 07/03/2021.
@@ -12,31 +12,31 @@
 
 import UIKit
 
-protocol HomeBusinessLogic
+protocol HomePageBusinessLogic
 {
-  func fetchGoldenScent(request: Home.FetchGoldenScent.Request)
+  func fetchGoldenScent(request: HomePage.FetchGoldenScent.Request)
 }
 
-protocol HomeDataStore
+protocol HomePageDataStore
 {
   var rows: [Row]? { get set }
 }
 
-class HomeInteractor: HomeBusinessLogic, HomeDataStore
+class HomePageInteractor: HomePageBusinessLogic, HomePageDataStore
 {
     
-  var presenter: HomePresentationLogic?
-  var worker: HomeWorker?
+  var presenter: HomePagePresentationLogic?
+  var worker: HomePageWorker?
   var rows: [Row]?
 
   // MARK: Do something
   
-  func fetchGoldenScent(request: Home.FetchGoldenScent.Request)
+  func fetchGoldenScent(request: HomePage.FetchGoldenScent.Request)
   {
-    worker = HomeWorker()
+    worker = HomePageWorker()
     worker?.readLocalFile(forName: "GoldenScent", completion: { (goldenScent: GoldenScent?) in
         self.rows = goldenScent?.rows
-        self.presenter?.presentGoldenScent(response: Home.FetchGoldenScent.Response(rows: goldenScent?.rows))
+        self.presenter?.presentGoldenScent(response: HomePage.FetchGoldenScent.Response(rows: goldenScent?.rows))
     })
     
   }
