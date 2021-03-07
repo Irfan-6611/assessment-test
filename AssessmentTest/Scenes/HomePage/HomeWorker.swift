@@ -11,10 +11,23 @@
 //
 
 import UIKit
+import UIKit
 
 class HomeWorker
 {
-  func doSomeWork()
-  {
-  }
+    
+    func readLocalFile<T: Codable>(forName name: String, completion: @escaping (T?) ->() ) {
+        do {
+            if let bundlePath = Bundle.main.path(forResource: name,
+                                                 ofType: "json"),
+                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
+                completion(try jsonData.decoded())
+            }
+        } catch {
+            completion(nil)
+        }
+        
+        completion(nil)
+    }
+    
 }

@@ -14,7 +14,7 @@ import UIKit
 
 protocol HomePresentationLogic
 {
-  func presentSomething(response: Home.Something.Response)
+  func presentGoldenScent(response: Home.FetchGoldenScent.Response)
 }
 
 class HomePresenter: HomePresentationLogic
@@ -23,9 +23,10 @@ class HomePresenter: HomePresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: Home.Something.Response)
+  func presentGoldenScent(response: Home.FetchGoldenScent.Response)
   {
-    let viewModel = Home.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+    let viewModel = Home.FetchGoldenScent.ViewModel(displayedRows: response.rows ?? [])
+    viewController?.displayGoldenScent(viewModel: viewModel)
   }
+
 }

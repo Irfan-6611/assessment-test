@@ -16,16 +16,19 @@ enum Home
 {
   // MARK: Use cases
   
-  enum Something
+  enum FetchGoldenScent
   {
     struct Request
     {
     }
     struct Response
     {
+        var rows: [Row]?
     }
     struct ViewModel
     {
+        var displayedRows: [Row]
+
     }
   }
 }

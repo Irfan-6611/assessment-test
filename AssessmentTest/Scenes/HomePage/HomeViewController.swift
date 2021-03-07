@@ -14,7 +14,7 @@ import UIKit
 
 protocol HomeDisplayLogic: class
 {
-  func displaySomething(viewModel: Home.Something.ViewModel)
+  func displayGoldenScent(viewModel: Home.FetchGoldenScent.ViewModel)
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic
@@ -53,22 +53,20 @@ class HomeViewController: UIViewController, HomeDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
+    fetchGoldenScenet()
   }
   
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
+  // MARK: Fetch Golden Scent
+    
+  func fetchGoldenScenet()
   {
-    let request = Home.Something.Request()
-    interactor?.doSomething(request: request)
+    let request = Home.FetchGoldenScent.Request()
+    interactor?.fetchGoldenScent(request: request)
   }
   
-  func displaySomething(viewModel: Home.Something.ViewModel)
+  func displayGoldenScent(viewModel: Home.FetchGoldenScent.ViewModel)
   {
-    //nameTextField.text = viewModel.name
+    print(viewModel.displayedRows.count)
   }
 }
 

@@ -14,28 +14,30 @@ import UIKit
 
 protocol HomeBusinessLogic
 {
-  func doSomething(request: Home.Something.Request)
+  func fetchGoldenScent(request: Home.FetchGoldenScent.Request)
 }
 
 protocol HomeDataStore
 {
-  //var name: String { get set }
+  var rows: [Row]? { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore
 {
+    
   var presenter: HomePresentationLogic?
   var worker: HomeWorker?
-  //var name: String = ""
-  
+  var rows: [Row]?
+
   // MARK: Do something
   
-  func doSomething(request: Home.Something.Request)
+  func fetchGoldenScent(request: Home.FetchGoldenScent.Request)
   {
     worker = HomeWorker()
-    worker?.doSomeWork()
+    worker?.readLocalFile(forName: "GoldenScent", completion: { (goldenScent: GoldenScent?) in
+        self.rows = goldenScent?.rows
+        self.presenter?.presentGoldenScent(response: Home.FetchGoldenScent.Response(rows: goldenScent?.rows))
+    })
     
-    let response = Home.Something.Response()
-    presenter?.presentSomething(response: response)
   }
 }

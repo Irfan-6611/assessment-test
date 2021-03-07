@@ -18,6 +18,9 @@
 		CB6AF12A25F4E162004CFEBC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF12425F4E162004CFEBC /* HomeViewController.swift */; };
 		CB6AF12B25F4E162004CFEBC /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF12525F4E162004CFEBC /* HomeInteractor.swift */; };
 		CB6AF12F25F4E198004CFEBC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6AF12E25F4E198004CFEBC /* HomeViewController.xib */; };
+		CB6AF13525F56CEE004CFEBC /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF13425F56CEE004CFEBC /* Codable+Extension.swift */; };
+		CB6AF13A25F56DF1004CFEBC /* GoldenScent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF13925F56DF1004CFEBC /* GoldenScent.swift */; };
+		CB6AF14025F56F6D004CFEBC /* GoldenScent.json in Resources */ = {isa = PBXBuildFile; fileRef = CB6AF13F25F56F6D004CFEBC /* GoldenScent.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		CB6AF12425F4E162004CFEBC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CB6AF12525F4E162004CFEBC /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		CB6AF12E25F4E198004CFEBC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		CB6AF13425F56CEE004CFEBC /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
+		CB6AF13925F56DF1004CFEBC /* GoldenScent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenScent.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		CB6AF13F25F56F6D004CFEBC /* GoldenScent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoldenScent.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 		CB6AF10625F4E03F004CFEBC /* AssessmentTest */ = {
 			isa = PBXGroup;
 			children = (
+				CB6AF13125F56C96004CFEBC /* Common */,
 				CB6AF11E25F4E0E1004CFEBC /* Scenes */,
 				CB6AF11C25F4E0C8004CFEBC /* SupportingFiles */,
 				CB6AF11525F4E040004CFEBC /* Info.plist */,
@@ -104,6 +111,40 @@
 				CB6AF12E25F4E198004CFEBC /* HomeViewController.xib */,
 			);
 			path = HomePage;
+			sourceTree = "<group>";
+		};
+		CB6AF13125F56C96004CFEBC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CB6AF13D25F56E5B004CFEBC /* JSONFiles */,
+				CB6AF13825F56D3F004CFEBC /* Models */,
+				CB6AF13225F56CA0004CFEBC /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CB6AF13225F56CA0004CFEBC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CB6AF13425F56CEE004CFEBC /* Codable+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CB6AF13825F56D3F004CFEBC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB6AF13925F56DF1004CFEBC /* GoldenScent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB6AF13D25F56E5B004CFEBC /* JSONFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CB6AF13F25F56F6D004CFEBC /* GoldenScent.json */,
+			);
+			path = JSONFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +206,7 @@
 			files = (
 				CB6AF11425F4E040004CFEBC /* LaunchScreen.storyboard in Resources */,
 				CB6AF11125F4E040004CFEBC /* Assets.xcassets in Resources */,
+				CB6AF14025F56F6D004CFEBC /* GoldenScent.json in Resources */,
 				CB6AF12F25F4E198004CFEBC /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,11 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6AF13525F56CEE004CFEBC /* Codable+Extension.swift in Sources */,
 				CB6AF12625F4E162004CFEBC /* HomePresenter.swift in Sources */,
 				CB6AF10825F4E03F004CFEBC /* AppDelegate.swift in Sources */,
 				CB6AF12725F4E162004CFEBC /* HomeWorker.swift in Sources */,
 				CB6AF12B25F4E162004CFEBC /* HomeInteractor.swift in Sources */,
 				CB6AF10A25F4E03F004CFEBC /* SceneDelegate.swift in Sources */,
+				CB6AF13A25F56DF1004CFEBC /* GoldenScent.swift in Sources */,
 				CB6AF12925F4E162004CFEBC /* HomeModels.swift in Sources */,
 				CB6AF12A25F4E162004CFEBC /* HomeViewController.swift in Sources */,
 				CB6AF12825F4E162004CFEBC /* HomeRouter.swift in Sources */,
