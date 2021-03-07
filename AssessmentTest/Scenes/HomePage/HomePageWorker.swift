@@ -16,7 +16,7 @@ import UIKit
 class HomePageWorker
 {
     
-    func readLocalFile<T: Codable>(forName name: String, completion: @escaping (T?) ->() ) {
+    func readLocalFile<T: Codable>(forName name: String, completion: (T?) ->() ) {
         do {
             if let bundlePath = Bundle.main.path(forResource: name,
                                                  ofType: "json"),
@@ -27,7 +27,6 @@ class HomePageWorker
             completion(nil)
         }
         
-        completion(nil)
     }
     
 }

@@ -36,8 +36,7 @@ class HomePageInteractor: HomePageBusinessLogic, HomePageDataStore
     worker = HomePageWorker()
     worker?.readLocalFile(forName: "GoldenScent", completion: { (goldenScent: GoldenScent?) in
         self.rows = goldenScent?.rows
-        self.presenter?.presentGoldenScent(response: HomePage.FetchGoldenScent.Response(rows: goldenScent?.rows))
+        self.presenter?.presentGoldenScent(response: HomePage.FetchGoldenScent.Response(rows: rows))
     })
-    
   }
 }

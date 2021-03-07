@@ -19,8 +19,8 @@
 		CB6AF12B25F4E162004CFEBC /* HomePageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF12525F4E162004CFEBC /* HomePageInteractor.swift */; };
 		CB6AF12F25F4E198004CFEBC /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6AF12E25F4E198004CFEBC /* HomePageViewController.xib */; };
 		CB6AF13525F56CEE004CFEBC /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF13425F56CEE004CFEBC /* Codable+Extension.swift */; };
-		CB6AF14025F56F6D004CFEBC /* GoldenScent.json in Resources */ = {isa = PBXBuildFile; fileRef = CB6AF13F25F56F6D004CFEBC /* GoldenScent.json */; };
 		CB6AF14D25F57FD8004CFEBC /* GoldenScent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF14C25F57FD8004CFEBC /* GoldenScent.swift */; };
+		CB995E6F25F5989D00FABBE7 /* GoldenScent.json in Resources */ = {isa = PBXBuildFile; fileRef = CB995E6E25F5989D00FABBE7 /* GoldenScent.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +38,8 @@
 		CB6AF12525F4E162004CFEBC /* HomePageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageInteractor.swift; sourceTree = "<group>"; };
 		CB6AF12E25F4E198004CFEBC /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
 		CB6AF13425F56CEE004CFEBC /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
-		CB6AF13F25F56F6D004CFEBC /* GoldenScent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoldenScent.json; sourceTree = "<group>"; };
 		CB6AF14C25F57FD8004CFEBC /* GoldenScent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenScent.swift; sourceTree = "<group>"; };
+		CB995E6E25F5989D00FABBE7 /* GoldenScent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoldenScent.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 		CB6AF13D25F56E5B004CFEBC /* JSONFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CB6AF13F25F56F6D004CFEBC /* GoldenScent.json */,
+				CB995E6E25F5989D00FABBE7 /* GoldenScent.json */,
 			);
 			path = JSONFiles;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 			files = (
 				CB6AF11425F4E040004CFEBC /* LaunchScreen.storyboard in Resources */,
 				CB6AF11125F4E040004CFEBC /* Assets.xcassets in Resources */,
-				CB6AF14025F56F6D004CFEBC /* GoldenScent.json in Resources */,
+				CB995E6F25F5989D00FABBE7 /* GoldenScent.json in Resources */,
 				CB6AF12F25F4E198004CFEBC /* HomePageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
