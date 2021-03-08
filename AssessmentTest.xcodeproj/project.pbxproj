@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB69D66725F5A54500BAE458 /* GoldenScentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69D66625F5A54500BAE458 /* GoldenScentDataManager.swift */; };
 		CB6AF10825F4E03F004CFEBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF10725F4E03F004CFEBC /* AppDelegate.swift */; };
 		CB6AF10A25F4E03F004CFEBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF10925F4E03F004CFEBC /* SceneDelegate.swift */; };
 		CB6AF11125F4E040004CFEBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB6AF11025F4E040004CFEBC /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB69D66625F5A54500BAE458 /* GoldenScentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenScentDataManager.swift; sourceTree = "<group>"; };
 		CB6AF10425F4E03F004CFEBC /* AssessmentTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssessmentTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6AF10725F4E03F004CFEBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB6AF10925F4E03F004CFEBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB69D66525F5A52600BAE458 /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				CB69D66625F5A54500BAE458 /* GoldenScentDataManager.swift */,
+			);
+			path = DataManagers;
+			sourceTree = "<group>";
+		};
 		CB6AF0FB25F4E03F004CFEBC = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 		CB6AF13125F56C96004CFEBC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CB69D66525F5A52600BAE458 /* DataManagers */,
 				CB6AF13D25F56E5B004CFEBC /* JSONFiles */,
 				CB6AF13825F56D3F004CFEBC /* Models */,
 				CB6AF13225F56CA0004CFEBC /* Extensions */,
@@ -224,6 +235,7 @@
 				CB6AF12725F4E162004CFEBC /* HomePageWorker.swift in Sources */,
 				CB6AF12B25F4E162004CFEBC /* HomePageInteractor.swift in Sources */,
 				CB6AF10A25F4E03F004CFEBC /* SceneDelegate.swift in Sources */,
+				CB69D66725F5A54500BAE458 /* GoldenScentDataManager.swift in Sources */,
 				CB6AF14D25F57FD8004CFEBC /* GoldenScent.swift in Sources */,
 				CB6AF12925F4E162004CFEBC /* HomePageModels.swift in Sources */,
 				CB6AF12A25F4E162004CFEBC /* HomePageViewController.swift in Sources */,
