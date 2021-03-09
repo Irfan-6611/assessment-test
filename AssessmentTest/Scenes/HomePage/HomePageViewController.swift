@@ -25,7 +25,7 @@ class HomePageViewController: UIViewController, HomePageDisplayLogic
     
   var interactor: HomePageBusinessLogic?
   var router: (NSObjectProtocol & HomePageRoutingLogic & HomePageDataPassing)?
-    var goldenScents: [HomePage.DisplayedGoldenScent] = []
+    var displayedGoldenScent: [HomePage.DisplayedGoldenScent] = []
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -71,7 +71,7 @@ class HomePageViewController: UIViewController, HomePageDisplayLogic
   
   func displayGoldenScent(viewModel: HomePage.FetchGoldenScent.ViewModel)
   {
-    goldenScents = viewModel.displayedRows
+    displayedGoldenScent = viewModel.displayedRows
     DispatchQueue.main.async {
         self.tableView.reloadData()
     }
@@ -84,14 +84,14 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let cell = cell as? GoldenScentTableViewCell else { return }
-        cell.containerViewLeftPadding.constant = goldenScents[indexPath.row].rowLeftPadding ?? 0
-        cell.containerViewRightPadding.constant = goldenScents[indexPath.row].rowRightPadding ?? 0
-        cell.containerViewBottomPadding.constant = goldenScents[indexPath.row].rowBottomPadding ?? 0
+        cell.containerViewLeftPadding.constant = displayedGoldenScent[indexPath.row].goldenScents[indexPath.row].rowLeftPadding ?? 0
+        cell.containerViewRightPadding.constant = displayedGoldenScent[indexPath.row].goldenScents[indexPath.row].rowRightPadding ?? 0
+        cell.containerViewBottomPadding.constant = displayedGoldenScent[indexPath.row].goldenScents[indexPath.row].rowBottomPadding ?? 0
 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return goldenScents.count
+        return displayedGoldenScent.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,7 +100,10 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return goldenScents[indexPath.row].height ?? 330
+        if let rowHeight = displayedGoldenScent[indexPath.row].goldenScents[indexPath.row].height{
+            return rowHeight == 0 ? 330 : 330
+        }
+        return 330
     }
     
     

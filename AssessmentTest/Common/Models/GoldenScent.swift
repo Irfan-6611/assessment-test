@@ -16,7 +16,7 @@ struct GoldenScent: Codable {
 // MARK: - Row
 struct Row: Codable {
     let rowMarginLeft, rowMarginRight, rowMarginBottom: String?
-    let columns: [Column]
+    let columns: [Column]?
     let height: String?
 
     enum CodingKeys: String, CodingKey {

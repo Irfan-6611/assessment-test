@@ -35,12 +35,11 @@ private extension HomePagePresenter{
     private func prepareDataToDisplay(scentToDispayed: [Row]?)-> [HomePage.DisplayedGoldenScent]{
         var disppayedScents: [HomePage.DisplayedGoldenScent] = []
         if let scents = scentToDispayed {
-            
-             disppayedScents = scents.compactMap({HomePage.DisplayedGoldenScent(rowLeftPadding: $0.rowMarginLeft?.dropLast(2).string.stringToCGFloat() ?? 0,
+             let goldenScents = scents.compactMap({HomePage.GoldenScents(rowLeftPadding: $0.rowMarginLeft?.dropLast(2).string.stringToCGFloat() ?? 0,
                                                                                rowRightPadding: $0.rowMarginRight?.dropLast(2).string.stringToCGFloat() ?? 0,
                                                                                rowBottomPadding: $0.rowMarginBottom?.dropLast(2).string.stringToCGFloat() ?? 0,
                                                                                height: $0.height?.dropLast(2).string.stringToCGFloat() ?? 0,
-                                                                               columns: $0.columns.compactMap({  HomePage.ColumnData(type: $0.type,
+                                                                               columns: $0.columns == nil ? [] : $0.columns!.compactMap({  HomePage.ColumnData(type: $0.type,
                                                                                                                                         imgUrl: $0.src,
                                                                                                                                         slides: $0.slides?.compactMap({ HomePage.SliderData(imgUrl: $0.src) }),
                                                                                                                                         content: $0.content ?? "",
@@ -50,7 +49,8 @@ private extension HomePagePresenter{
                                                                                                                                         cellBackground: $0.background?.color?.hexStringToUIColor() ?? .white)})
             )})
                                                                                                                 
-        
+            
+            disppayedScents = scents.compactMap({_ in HomePage.DisplayedGoldenScent(goldenScents: goldenScents)})
             return disppayedScents
                     
         }

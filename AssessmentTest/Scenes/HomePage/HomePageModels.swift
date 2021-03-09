@@ -15,6 +15,10 @@ import UIKit
 enum HomePage
 {
     struct DisplayedGoldenScent {
+        var goldenScents: [GoldenScents]
+
+    }
+    struct GoldenScents {
         var rowLeftPadding: CGFloat?
         var rowRightPadding: CGFloat?
         var rowBottomPadding: CGFloat?
