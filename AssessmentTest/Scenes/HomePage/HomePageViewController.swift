@@ -19,9 +19,13 @@ protocol HomePageDisplayLogic: class
 
 class HomePageViewController: UIViewController, HomePageDisplayLogic
 {
+    // MARK: IBOutlets
+
+  @IBOutlet weak var tableView: UITableView!
+    
   var interactor: HomePageBusinessLogic?
   var router: (NSObjectProtocol & HomePageRoutingLogic & HomePageDataPassing)?
-
+    var goldenScents: [HomePage.DisplayedGoldenScent] = []
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -54,6 +58,7 @@ class HomePageViewController: UIViewController, HomePageDisplayLogic
   {
     super.viewDidLoad()
     fetchGoldenScenet()
+    tableViewConfiguration()
   }
   
   // MARK: Fetch Golden Scent
@@ -66,8 +71,39 @@ class HomePageViewController: UIViewController, HomePageDisplayLogic
   
   func displayGoldenScent(viewModel: HomePage.FetchGoldenScent.ViewModel)
   {
-    print(viewModel.displayedRows.count)
+    goldenScents = viewModel.displayedRows
+    DispatchQueue.main.async {
+        self.tableView.reloadData()
+    }
   }
+}
+
+//MARK:- TableView Delegate and Datasource
+
+extension HomePageViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? GoldenScentTableViewCell else { return }
+        cell.containerViewLeftPadding.constant = goldenScents[indexPath.row].rowLeftPadding ?? 0
+        cell.containerViewRightPadding.constant = goldenScents[indexPath.row].rowRightPadding ?? 0
+        cell.containerViewBottomPadding.constant = goldenScents[indexPath.row].rowBottomPadding ?? 0
+
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return goldenScents.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: GoldenScentTableViewCell.identifier, for: indexPath) as! GoldenScentTableViewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return goldenScents[indexPath.row].height ?? 330
+    }
+    
+    
 }
 
 //MARK:- Private Extensions
@@ -88,6 +124,12 @@ private extension HomePageViewController{
       presenter.viewController = viewController
       router.viewController = viewController
       router.dataStore = interactor
+    }
+    
+    private func tableViewConfiguration(){
+        tableView.register(GoldenScentTableViewCell.nib, forCellReuseIdentifier: GoldenScentTableViewCell.identifier)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
 }

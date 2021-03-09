@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB688C7325F5BA67009C7521 /* GoldenScentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB688C7125F5BA67009C7521 /* GoldenScentTableViewCell.swift */; };
+		CB688C7425F5BA67009C7521 /* GoldenScentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB688C7225F5BA67009C7521 /* GoldenScentTableViewCell.xib */; };
+		CB688C7825F5C14D009C7521 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB688C7725F5C14D009C7521 /* Int+Extension.swift */; };
 		CB69D66725F5A54500BAE458 /* GoldenScentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69D66625F5A54500BAE458 /* GoldenScentDataManager.swift */; };
 		CB6AF10825F4E03F004CFEBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF10725F4E03F004CFEBC /* AppDelegate.swift */; };
 		CB6AF10A25F4E03F004CFEBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF10925F4E03F004CFEBC /* SceneDelegate.swift */; };
@@ -21,10 +24,14 @@
 		CB6AF12F25F4E198004CFEBC /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6AF12E25F4E198004CFEBC /* HomePageViewController.xib */; };
 		CB6AF13525F56CEE004CFEBC /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF13425F56CEE004CFEBC /* Codable+Extension.swift */; };
 		CB6AF14D25F57FD8004CFEBC /* GoldenScent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AF14C25F57FD8004CFEBC /* GoldenScent.swift */; };
+		CB8E499625F6B34300F72C52 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E499525F6B34300F72C52 /* String+Extension.swift */; };
 		CB995E6F25F5989D00FABBE7 /* GoldenScent.json in Resources */ = {isa = PBXBuildFile; fileRef = CB995E6E25F5989D00FABBE7 /* GoldenScent.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB688C7125F5BA67009C7521 /* GoldenScentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenScentTableViewCell.swift; sourceTree = "<group>"; };
+		CB688C7225F5BA67009C7521 /* GoldenScentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoldenScentTableViewCell.xib; sourceTree = "<group>"; };
+		CB688C7725F5C14D009C7521 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		CB69D66625F5A54500BAE458 /* GoldenScentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenScentDataManager.swift; sourceTree = "<group>"; };
 		CB6AF10425F4E03F004CFEBC /* AssessmentTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssessmentTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6AF10725F4E03F004CFEBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +48,7 @@
 		CB6AF12E25F4E198004CFEBC /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
 		CB6AF13425F56CEE004CFEBC /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
 		CB6AF14C25F57FD8004CFEBC /* GoldenScent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenScent.swift; sourceTree = "<group>"; };
+		CB8E499525F6B34300F72C52 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CB995E6E25F5989D00FABBE7 /* GoldenScent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoldenScent.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB688C7025F5BA22009C7521 /* UIEliments */ = {
+			isa = PBXGroup;
+			children = (
+				CB688C7125F5BA67009C7521 /* GoldenScentTableViewCell.swift */,
+				CB688C7225F5BA67009C7521 /* GoldenScentTableViewCell.xib */,
+			);
+			path = UIEliments;
+			sourceTree = "<group>";
+		};
 		CB69D66525F5A52600BAE458 /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +129,7 @@
 		CB6AF11F25F4E110004CFEBC /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				CB688C7025F5BA22009C7521 /* UIEliments */,
 				CB6AF12025F4E161004CFEBC /* HomePagePresenter.swift */,
 				CB6AF12125F4E161004CFEBC /* HomePageWorker.swift */,
 				CB6AF12225F4E161004CFEBC /* HomePageRouter.swift */,
@@ -138,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				CB6AF13425F56CEE004CFEBC /* Codable+Extension.swift */,
+				CB688C7725F5C14D009C7521 /* Int+Extension.swift */,
+				CB8E499525F6B34300F72C52 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +238,7 @@
 				CB6AF11425F4E040004CFEBC /* LaunchScreen.storyboard in Resources */,
 				CB6AF11125F4E040004CFEBC /* Assets.xcassets in Resources */,
 				CB995E6F25F5989D00FABBE7 /* GoldenScent.json in Resources */,
+				CB688C7425F5BA67009C7521 /* GoldenScentTableViewCell.xib in Resources */,
 				CB6AF12F25F4E198004CFEBC /* HomePageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,7 +256,10 @@
 				CB6AF12725F4E162004CFEBC /* HomePageWorker.swift in Sources */,
 				CB6AF12B25F4E162004CFEBC /* HomePageInteractor.swift in Sources */,
 				CB6AF10A25F4E03F004CFEBC /* SceneDelegate.swift in Sources */,
+				CB688C7325F5BA67009C7521 /* GoldenScentTableViewCell.swift in Sources */,
 				CB69D66725F5A54500BAE458 /* GoldenScentDataManager.swift in Sources */,
+				CB8E499625F6B34300F72C52 /* String+Extension.swift in Sources */,
+				CB688C7825F5C14D009C7521 /* Int+Extension.swift in Sources */,
 				CB6AF14D25F57FD8004CFEBC /* GoldenScent.swift in Sources */,
 				CB6AF12925F4E162004CFEBC /* HomePageModels.swift in Sources */,
 				CB6AF12A25F4E162004CFEBC /* HomePageViewController.swift in Sources */,

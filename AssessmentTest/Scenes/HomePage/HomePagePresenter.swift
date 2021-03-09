@@ -25,8 +25,36 @@ class HomePagePresenter: HomePagePresentationLogic
   
   func presentGoldenScent(response: HomePage.FetchGoldenScent.Response)
   {
-    let viewModel = HomePage.FetchGoldenScent.ViewModel(displayedRows: response.rows ?? [])
-    viewController?.displayGoldenScent(viewModel: viewModel)
+    let goldenScent = self.prepareDataToDisplay(scentToDispayed: response.rows)
+    viewController?.displayGoldenScent(viewModel: HomePage.FetchGoldenScent.ViewModel(displayedRows: goldenScent))
   }
 
+}
+
+private extension HomePagePresenter{
+    private func prepareDataToDisplay(scentToDispayed: [Row]?)-> [HomePage.DisplayedGoldenScent]{
+        var disppayedScents: [HomePage.DisplayedGoldenScent] = []
+        if let scents = scentToDispayed {
+            
+             disppayedScents = scents.compactMap({HomePage.DisplayedGoldenScent(rowLeftPadding: $0.rowMarginLeft?.dropLast(2).string.stringToCGFloat() ?? 0,
+                                                                               rowRightPadding: $0.rowMarginRight?.dropLast(2).string.stringToCGFloat() ?? 0,
+                                                                               rowBottomPadding: $0.rowMarginBottom?.dropLast(2).string.stringToCGFloat() ?? 0,
+                                                                               height: $0.height?.dropLast(2).string.stringToCGFloat() ?? 0,
+                                                                               columns: $0.columns.compactMap({  HomePage.ColumnData(type: $0.type,
+                                                                                                                                        imgUrl: $0.src,
+                                                                                                                                        slides: $0.slides?.compactMap({ HomePage.SliderData(imgUrl: $0.src) }),
+                                                                                                                                        content: $0.content ?? "",
+                                                                                                                                        textAlign: $0.textAlign,
+                                                                                                                                        fontColor: $0.fontColor?.hexStringToUIColor() ?? .black,
+                                                                                                                                        font: $0.font == nil ? nil : ($0.font! as NSString).doubleValue,
+                                                                                                                                        cellBackground: $0.background?.color?.hexStringToUIColor() ?? .white)})
+            )})
+                                                                                                                
+        
+            return disppayedScents
+                    
+        }
+        
+        return []
+    }
 }

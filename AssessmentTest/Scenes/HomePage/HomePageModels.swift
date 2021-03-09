@@ -14,10 +14,35 @@ import UIKit
 
 enum HomePage
 {
+    struct DisplayedGoldenScent {
+        var rowLeftPadding: CGFloat?
+        var rowRightPadding: CGFloat?
+        var rowBottomPadding: CGFloat?
+        var height: CGFloat?
+        var columns: [ColumnData]
+    }
+    
+    struct ColumnData {
+        var type: String
+        var imgUrl: String?
+        var slides: [SliderData]?
+        var content: String?
+        var textAlign: String?
+        var fontColor: UIColor?
+        let font: Double?
+        let cellBackground: UIColor?
+    }
+    
+    struct SliderData {
+        let imgUrl: String?
+    }
+    
+
   // MARK: Use cases
   
   enum FetchGoldenScent
   {
+    
     struct Request
     {
     }
@@ -27,7 +52,7 @@ enum HomePage
     }
     struct ViewModel
     {
-        var displayedRows: [Row]
+        var displayedRows: [DisplayedGoldenScent]
 
     }
   }
